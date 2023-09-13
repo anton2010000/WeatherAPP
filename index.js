@@ -2,6 +2,7 @@ const container = document.querySelector('.container');
 const search = document.querySelector('.search-box button');
 const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
+const weatherDetails2 = document.querySelector('.weather-details2');
 const error404 = document.querySelector('.not-found');
 
 search.addEventListener('click', () => {
@@ -20,6 +21,7 @@ search.addEventListener('click', () => {
                 container.style.height = '400px';
                 weatherBox.style.display = 'none';
                 weatherDetails.style.display = 'none';
+                weatherDetails2.style.display = 'none';
                 error404.style.display = 'block';
                 error404.classList.add('fadeIn');
                 return;
@@ -33,6 +35,9 @@ search.addEventListener('click', () => {
             const description = document.querySelector('.weather-box .description');
             const humidity = document.querySelector('.weather-details .humidity span');
             const wind = document.querySelector('.weather-details .wind span');
+            const temp_min = document.querySelector('.weather-details .temp_min span');
+            const pressure = document.querySelector('.weather-details2 .pressure span');
+
 
             switch (json.weather[0].main) {
                 case 'Clear':
@@ -54,7 +59,24 @@ search.addEventListener('click', () => {
                 case 'Haze':
                     image.src = 'mist.png';
                     break;
-
+                case 'Thunderstorm':
+                    image.src = '';
+                    break;
+                case 'Drizzle':
+                    image.src = '';
+                    break;
+                case 'Smoke':
+                    image.src = '';
+                    break;
+                case 'Dust':
+                    image.src = '';
+                    break;
+                case 'Fog':
+                    image.src = '';
+                    break;
+                case 'Tornado':
+                    image.src = '';
+                    break;
                 default:
                     image.src = '';
             }
@@ -63,6 +85,8 @@ search.addEventListener('click', () => {
             description.innerHTML = `${json.weather[0].description}`;
             humidity.innerHTML = `${json.main.humidity}%`;
             wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
+            temp_min.innerHTML = `${parseInt(json.main.temp_min)}<span>°C</span>`;
+            pressure.innerHTML = `${parseInt(json.main.pressure)}hPa`;
 
             weatherBox.style.display = '';
             weatherDetails.style.display = '';
