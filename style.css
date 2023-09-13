@@ -106,26 +106,56 @@ body{
 .weather-details{
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
+    justify-content: center;
+    margin-top: -10px;
 }
 
-.weather-details .humidity, .weather-details .wind{
+.weather-details2{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin-top: -10px;
+}
+
+
+.weather-details .humidity, .weather-details .wind, .weather-details .temp_min{
     display: flex;
     align-items: center;
     width: 50%;
     height: 100px;
 }
 
+.weather-details2 .pressure{
+    display: flex;
+    align-items: start;
+    width: 50%;
+    height: 100px;
+}
+
 .weather-details .humidity{
-    padding-left: 20px;
-    justify-content: flex-start;
+    padding-left: 0px;
+    justify-content: center;
+}
+
+.weather-details2 .pressure{
+    padding-left: 0px;
+    justify-content: start;
+    margin-top: 10px;
 }
 
 .weather-details .wind{
     padding-right: 20px;
-    justify-content: flex-end;
+    padding-left: 20px;
+    justify-content: center;
 }
+
+
+
+.weather-details .temp_min{
+    padding-right: 0px;
+    justify-content: center;
+}
+
 
 .weather-details i{
     color: #06283D;
@@ -134,16 +164,53 @@ body{
     margin-top: 6px;
 }
 
+
 .weather-details span{
     color: #06283D;
     font-size: 22px;
     font-weight: 500;
 }
 
+
 .weather-details p{
     color: #06283D;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
+    padding-left: 1px;
+}
+
+.weather-details2 i{
+    color: #06283D;
+    font-size: 26px;
+    margin-right: 10px;
+    margin-top: 6px;
+}
+
+
+.weather-details2 span{
+    color: #06283D;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.weather-details2 p{
+    color: #06283D;
+    font-size: 13px;
+    font-weight: 500;
+    padding-left: 5px;
+}
+
+
+.weather-details .temp_min p{
+    padding-left: 4px;
+    white-space: nowrap;
+}
+
+
+.weather-details .wind p{
+    white-space: nowrap;
+    padding-left: 4px;
 }
 
 .not-found{
@@ -180,18 +247,5 @@ body{
     to {
         scale: 1;
         opacity: 1;
-    }
-}
-.water{
-    height:100vh;
-    background:url(water.png);
-    animation:water 0.3s linear infinite;
-}
-@keyframes water{
-    0%{
-        background-position: -10% -10%;
-    }
-    100%{
-        background-position: 200% 100%;
     }
 }
