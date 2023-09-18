@@ -11,7 +11,24 @@
     <link rel="stylesheet" href="style.css">
     <title>Weather</title>
 </head>
+<style>
 
+            @keyframes snow {
+                0%{
+                    background-position: 0px 0px, 0px 0px, 0px 0px;
+                }
+                100%{
+                    background-position: 600px 1800px, 600px 1200px, 600px 600px;
+                }
+
+            }
+
+            body{
+                background-image: url('background1.png'), url('background2.png'), url('background3.png');
+                animation: snow 30s linear infinite;
+
+            }
+        </style>
 <body>
 
     <div class="container">
@@ -50,7 +67,7 @@
                 </div>
             </div>
             <div class="temp_min">
-                <img src="icons8-термометр-вверх.gif" />
+                <img src="icons8-температура2.gif" />
 
                 <div class="text">
                     <span></span>
@@ -66,6 +83,22 @@
                 <div class="text">
                     <span></span>
                     <p>Pressure</p>
+                </div>
+            </div>
+            <div class="clouds">
+                <img src="icons8-облака.gif" />
+
+                <div class="text">
+                    <span></span>
+                    <p>Clouds</p>
+                </div>
+            </div>
+            <div class="temp_max">
+                <img src="icons8-температура.gif" />
+
+                <div class="text">
+                    <span></span>
+                    <p> Max t°C</p>
                 </div>
             </div>
 
