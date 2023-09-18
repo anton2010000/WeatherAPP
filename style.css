@@ -114,7 +114,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: start;
-    margin-top: -10px;
+    margin-top: -40px;
 }
 
 
@@ -125,9 +125,9 @@ body{
     height: 100px;
 }
 
-.weather-details2 .pressure{
+.weather-details2 .pressure, .weather-details2 .clouds, .weather-details2 .temp_max{
     display: flex;
-    align-items: start;
+    align-items: center;
     width: 50%;
     height: 100px;
 }
@@ -141,6 +141,19 @@ body{
     padding-left: 0px;
     justify-content: start;
     margin-top: 10px;
+}
+
+ .weather-details2 .clouds{
+   padding-right: 30px;
+    padding-left: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.weather-details2 .temp_max{
+    padding-right: 0px;
+    justify-content: center;
+     margin-top: 10px;
 }
 
 .weather-details .wind{
@@ -167,7 +180,7 @@ body{
 
 .weather-details span{
     color: #06283D;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 500;
 }
 
@@ -207,6 +220,10 @@ body{
     white-space: nowrap;
 }
 
+.weather-details2 .temp_max p{
+    padding-left: 4px;
+    white-space: nowrap;
+}
 
 .weather-details .wind p{
     white-space: nowrap;
