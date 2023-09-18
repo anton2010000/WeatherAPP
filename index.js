@@ -13,7 +13,7 @@ search.addEventListener('click', () => {
     if (city === '')
         return;
 
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&units=metric&appid=${APIKey}`)
         .then(response => response.json())
         .then(json => {
 
@@ -37,7 +37,8 @@ search.addEventListener('click', () => {
             const wind = document.querySelector('.weather-details .wind span');
             const temp_min = document.querySelector('.weather-details .temp_min span');
             const pressure = document.querySelector('.weather-details2 .pressure span');
-
+            const clouds = document.querySelector('.weather-details2 .clouds span');
+            const temp_max = document.querySelector('.weather-details2 .temp_max span');
 
             switch (json.weather[0].main) {
                 case 'Clear':
@@ -87,6 +88,8 @@ search.addEventListener('click', () => {
             wind.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
             temp_min.innerHTML = `${parseInt(json.main.temp_min)}<span>°C</span>`;
             pressure.innerHTML = `${parseInt(json.main.pressure)}hPa`;
+            clouds.innerHTML = `${parseInt(json.clouds.all)}%`;
+            temp_max.innerHTML = `${parseInt(json.main.temp_max)}<span>°C</span>`;
 
             weatherBox.style.display = '';
             weatherDetails.style.display = '';
